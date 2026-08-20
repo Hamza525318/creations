@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #f8f4ec;
+    --foreground: #29241f;
+
+    --card: #fffdf9;
+    --card-foreground: #29241f;
+
+    --popover: #fffdf9;
+    --popover-foreground: #29241f;
+
+    --primary: #722f37;
+    --primary-foreground: #fffdf9;
+
+    --secondary: #eee6d8;
+    --secondary-foreground: #29241f;
+
+    --muted: #eee6d8;
+    --muted-foreground: #746b62;
+
+    --accent: #7b8264;
+    --accent-foreground: #fffdf9;
+
+    --border: #ded5c8;
+    --input: #ded5c8;
+    --ring: #722f37;
+
+    --brand-burgundy: #722f37;
+    --brand-burgundy-dark: #572229;
+    --brand-sage: #7b8264;
+    --brand-olive: #4b4a20;
+    --brand-gold: #b58a4a;
+    --brand-champagne: #d7bc82;
+    --brand-ivory: #f8f4ec;
+    --brand-sand: #eee6d8;
+    --brand-espresso: #29241f;
+    --brand-charcoal: #403a34;
+    --brand-taupe: #746b62;
+    --brand-border-strong: #cfc3b3;
+
+    --radius: 0.75rem;
+  }
+}
+
+@theme {
+  --font-display: var(--font-cormorant), Cormorant Garamond, Georgia, serif;
+  --font-sans: var(--font-manrope), Manrope, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-burgundy: #722f37;
+  --color-burgundy-dark: #572229;
+  --color-sage: #7b8264;
+  --color-olive: #4b4a20;
+  --color-gold: #b58a4a;
+  --color-champagne: #d7bc82;
+  --color-ivory: #f8f4ec;
+  --color-sand: #eee6d8;
+  --color-espresso: #29241f;
+  --color-charcoal: #403a34;
+  --color-taupe: #746b62;
+  --color-border-strong: #cfc3b3;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+}
