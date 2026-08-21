@@ -1,65 +1,72 @@
 import React from "react";
 import Section from "@/components/layout/section";
 import SectionHeading from "@/components/common/section-heading";
-import { Compass, Layers, UserCheck, MapPin } from "lucide-react";
+import { services } from "@/data/services";
+import { ArrowRight } from "lucide-react";
 
 export default function BenefitsSection() {
-  const benefits = [
-    {
-      icon: Compass,
-      title: "Made for Your Space",
-      description:
-        "Custom window treatments and furnishings measured and proportioned specifically for your architectural layout.",
-    },
-    {
-      icon: Layers,
-      title: "Curated Selection",
-      description:
-        "A considered range of premium drapery fabrics, blinds, textures, and finishes selected for aesthetic durability.",
-    },
-    {
-      icon: UserCheck,
-      title: "Personal Guidance",
-      description:
-        "Thoughtful recommendations on combining fabric weights, colors, and textures to complement your overall decor.",
-    },
-    {
-      icon: MapPin,
-      title: "Local Besant Nagar Store",
-      description:
-        "Visit our local showroom in Chennai to see and touch physical fabric swatches before making your decision.",
-    },
-  ];
-
   return (
-    <Section id="why-us" variant="sand">
+    <Section id="why-us" variant="ivory" className="py-16 md:py-24">
       <SectionHeading
-        eyebrow="The CREATION'S Difference"
-        heading="Considered furnishing for residential interiors."
-        description="We believe home furnishing should feel personal, knowledgeable, and effortlessly tasteful."
-        align="left"
+        eyebrow="Our Services"
+        heading="From selection to installation."
+        description="A simpler, personalised way to find, measure, and fit the right furnishings for your home."
+        align="center"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {benefits.map((benefit, index) => {
-          const Icon = benefit.icon;
-          return (
-            <div
-              key={index}
-              className="flex flex-col space-y-4 p-6 rounded-2xl bg-card border border-border/70 shadow-2xs transition-transform duration-300 hover:-translate-y-1"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sand text-burgundy">
-                <Icon className="h-5 w-5" />
+      {/* 2 × 2 Desktop Matrix / Clean 1-col Mobile Layout */}
+      <div className="max-w-5xl mx-auto rounded-3xl bg-card border border-border/80 shadow-2xs overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x-0 divide-border/60">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            // 2x2 divider borders on desktop:
+            // 0 (top-left): border-r, border-b
+            // 1 (top-right): border-b
+            // 2 (bottom-left): border-r
+            // 3 (bottom-right): clean
+            const desktopBorderClasses = [
+              "md:border-r md:border-b md:border-border/70",
+              "md:border-b md:border-border/70",
+              "md:border-r md:border-border/70",
+              "",
+            ][index];
+
+            return (
+              <div
+                key={service.id}
+                className={`flex flex-col items-center text-center p-8 sm:p-12 lg:p-14 space-y-4 group transition-colors duration-300 hover:bg-sand/20 ${desktopBorderClasses}`}
+              >
+                {/* Clean large line icon without heavy container */}
+                <div className="flex items-center justify-center text-burgundy transition-transform duration-300 group-hover:scale-105">
+                  <Icon className="h-10 w-10 sm:h-11 sm:w-11 stroke-[1.5]" />
+                </div>
+
+                {/* Title */}
+                <h3 className="font-display text-2xl sm:text-3xl font-medium text-espresso pt-1">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="font-sans text-sm sm:text-base text-taupe leading-relaxed max-w-sm">
+                  {service.description}
+                </p>
+
+                {/* Optional subtle text CTA */}
+                {service.cta && service.href && (
+                  <div className="pt-2">
+                    <a
+                      href={service.href}
+                      className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-burgundy hover:text-burgundy-dark transition-colors group/link"
+                    >
+                      <span>{service.cta}</span>
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
+                    </a>
+                  </div>
+                )}
               </div>
-              <h3 className="font-display text-2xl font-medium text-espresso">
-                {benefit.title}
-              </h3>
-              <p className="font-sans text-sm text-taupe leading-relaxed">
-                {benefit.description}
-              </p>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </Section>
   );

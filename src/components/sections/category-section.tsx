@@ -16,19 +16,29 @@ export default async function CategorySection() {
   );
 
   return (
-    <Section id="categories" variant="white">
-      <SectionHeading
-        eyebrow="Our Collections"
-        heading="Furnish every part of your home."
-        description="Explore our four core categories crafted to bring warmth, privacy, and architectural elegance to your space."
-        align="left"
-      />
+    <Section id="categories" variant="white" className="overflow-hidden">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 md:mb-12 gap-3">
+        <SectionHeading
+          eyebrow="Our Collections"
+          heading="Furnish every part of your home."
+          description="Explore our four core categories crafted to bring warmth, privacy, and architectural elegance to your space."
+          align="left"
+          className="mb-0 md:mb-0"
+        />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* Mobile Swipe Cue */}
+        <span className="font-sans text-xs text-taupe inline-flex items-center gap-1 md:hidden self-start pb-1">
+          <span>Swipe to explore</span>
+          <ArrowRight className="h-3 w-3 text-burgundy" />
+        </span>
+      </div>
+
+      {/* Responsive Container: Native Horizontal Scroll Carousel on Mobile (<md) & Grid on Tablet/Desktop (>=md) */}
+      <div className="flex gap-4 sm:gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 pt-1 -mx-4 px-4 sm:-mx-6 sm:px-6 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:mx-0 md:px-0 md:pb-0">
         {mediaItems.map((category) => (
-          <div
+          <article
             key={category.key}
-            className="group flex flex-col justify-between bg-card rounded-2xl p-4 sm:p-5 border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
+            className="flex-none w-[84vw] max-w-[320px] snap-start md:w-auto md:max-w-none group flex flex-col justify-between bg-card rounded-2xl p-4 sm:p-5 border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
           >
             <div className="space-y-4">
               <WebsiteImage
@@ -36,29 +46,30 @@ export default async function CategorySection() {
                 aspectRatio="4/5"
                 fallbackCategory={category.label}
                 fallbackLabel={`${category.label} Collection Showcase`}
+                sizes="(max-width: 768px) 85vw, (max-width: 1024px) 50vw, 25vw"
                 className="w-full"
               />
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <h3 className="font-display text-2xl font-medium text-espresso group-hover:text-burgundy transition-colors">
                   {category.label}
                 </h3>
-                <p className="font-sans text-sm text-taupe leading-relaxed">
+                <p className="font-sans text-xs sm:text-sm text-taupe leading-relaxed line-clamp-3">
                   {category.description}
                 </p>
               </div>
             </div>
 
-            <div className="pt-5 border-t border-border/40 mt-4">
+            <div className="pt-4 border-t border-border/40 mt-4">
               <Link
                 href={category.href}
-                className="font-sans text-xs font-semibold uppercase tracking-wider text-burgundy inline-flex items-center gap-1.5 transition-transform group-hover:translate-x-1"
+                className="font-sans text-xs font-semibold uppercase tracking-wider text-burgundy inline-flex items-center gap-1.5 min-h-[36px] py-1 transition-transform group-hover:translate-x-1"
               >
                 <span>Explore {category.label}</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </Section>

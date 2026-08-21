@@ -58,7 +58,7 @@ export default function ImagePlaceholder({
         </span>
 
         <span className="font-sans text-xs text-taupe/70">
-          Cloudinary Asset Pending
+          Photography coming soon
         </span>
       </div>
 
