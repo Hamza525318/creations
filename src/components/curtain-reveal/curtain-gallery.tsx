@@ -54,6 +54,8 @@ export default function CurtainGallery({ images }: CurtainGalleryProps) {
               alt={item.alt || `Curtain reveal project #${index + 1}`}
               className="w-full"
             />
+            {/* Installation title & description commented out as requested */}
+            {/* 
             <div className="flex items-center justify-between px-1">
               <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-burgundy">
                 Installation #{index + 1}
@@ -62,6 +64,7 @@ export default function CurtainGallery({ images }: CurtainGalleryProps) {
                 {item.alt || "CREATION'S Custom Furnishing"}
               </p>
             </div>
+            */}
           </div>
         ))}
       </div>
@@ -82,6 +85,8 @@ export default function CurtainGallery({ images }: CurtainGalleryProps) {
             fallbackLabel={item.label}
             className="w-full"
           />
+          {/* Installation title & description commented out as requested */}
+          {/* 
           <div className="space-y-1 px-1">
             <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-burgundy">
               {item.category}
@@ -90,6 +95,7 @@ export default function CurtainGallery({ images }: CurtainGalleryProps) {
               {item.title}
             </h3>
           </div>
+          */}
         </div>
       ))}
     </div>

@@ -31,6 +31,8 @@ export default async function GallerySection() {
                   aspectRatio="4/3"
                   className="w-full"
                 />
+                {/* Product Title and Description commented out as requested */}
+                {/* 
                 <div className="flex items-center justify-between pt-1">
                   <div className="space-y-1">
                     <span className="font-sans text-xs font-semibold uppercase tracking-wider text-burgundy">
@@ -41,6 +43,7 @@ export default async function GallerySection() {
                     </h3>
                   </div>
                 </div>
+                */}
               </div>
             ))
           : fallbackProjects.map((project) => (
@@ -56,6 +59,8 @@ export default async function GallerySection() {
                   className="w-full"
                 />
 
+                {/* Product Title and Description commented out as requested */}
+                {/* 
                 <div className="flex items-center justify-between pt-1">
                   <div className="space-y-1">
                     <span className="font-sans text-xs font-semibold uppercase tracking-wider text-burgundy">
@@ -72,6 +77,7 @@ export default async function GallerySection() {
                     </span>
                   )}
                 </div>
+                */}
               </div>
             ))}
       </div>
