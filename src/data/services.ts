@@ -27,7 +27,7 @@ export const services: ServiceItem[] = [
       "Tell us what your space needs and we'll help you explore suitable fabrics, colours, and furnishing options.",
     icon: Sparkles,
     href: siteConfig.whatsappUrl,
-    cta: "Chat on WhatsApp",
+    cta: "Talk to Us on WhatsApp",
   },
   {
     id: "quality",
@@ -35,6 +35,8 @@ export const services: ServiceItem[] = [
     description:
       "Explore carefully selected furnishing materials with attention to finish, texture, and everyday comfort.",
     icon: Layers,
+    href: "#categories",
+    cta: "Explore Collections",
   },
   {
     id: "installation",
@@ -42,7 +44,7 @@ export const services: ServiceItem[] = [
     description:
       "Get your windows measured and your selected furnishings tailored and fitted at home in Chennai.",
     icon: Ruler,
-    href: siteConfig.whatsappUrl,
-    cta: "Enquire on WhatsApp",
+    href: "/measurement-guide",
+    cta: "How to Measure",
   },
 ];

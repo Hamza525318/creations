@@ -6,7 +6,7 @@ import WhatsAppButton from "@/components/common/whatsapp-button";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/layout/container";
 import { siteConfig } from "@/config/site";
-import { MapPin, Phone, ArrowLeft } from "lucide-react";
+import { MapPin, Phone, ArrowLeft, Ruler } from "lucide-react";
 import Link from "next/link";
 
 interface CategoryHeroProps {
@@ -15,6 +15,8 @@ interface CategoryHeroProps {
 }
 
 export default function CategoryHero({ config, coverMedia }: CategoryHeroProps) {
+  const isWindowTreatment = config.key === "curtains" || config.key === "blinds";
+
   return (
     <section className="relative bg-sand/30 py-10 md:py-16 border-b border-border/60">
       <Container>
@@ -63,6 +65,18 @@ export default function CategoryHero({ config, coverMedia }: CategoryHeroProps) 
                 </a>
               </Button>
             </div>
+
+            {isWindowTreatment && (
+              <div className="pt-1">
+                <Link
+                  href="/measurement-guide"
+                  className="inline-flex items-center gap-1.5 text-xs text-burgundy font-medium hover:underline group"
+                >
+                  <Ruler className="h-3.5 w-3.5" />
+                  <span>Not sure about window sizes? View our Measurement Guide →</span>
+                </Link>
+              </div>
+            )}
 
             <div className="pt-2 flex items-center gap-3">
               <div className="h-[1px] w-10 bg-gold/50" />

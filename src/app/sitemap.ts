@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
-  const lastModDate = new Date("2026-08-20T00:00:00.000Z");
+  const lastModDate = new Date("2026-08-21T00:00:00.000Z");
 
   return [
     {
@@ -35,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModDate,
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/measurement-guide`,
+      lastModified: lastModDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
   ];
 }

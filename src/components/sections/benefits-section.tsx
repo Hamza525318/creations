@@ -3,6 +3,7 @@ import Section from "@/components/layout/section";
 import SectionHeading from "@/components/common/section-heading";
 import { services } from "@/data/services";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function BenefitsSection() {
   return (
@@ -31,6 +32,8 @@ export default function BenefitsSection() {
               "",
             ][index];
 
+            const isExternal = service.href?.startsWith("http");
+
             return (
               <div
                 key={service.id}
@@ -51,16 +54,28 @@ export default function BenefitsSection() {
                   {service.description}
                 </p>
 
-                {/* Optional subtle text CTA */}
+                {/* Subtle text CTA */}
                 {service.cta && service.href && (
                   <div className="pt-2">
-                    <a
-                      href={service.href}
-                      className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-burgundy hover:text-burgundy-dark transition-colors group/link"
-                    >
-                      <span>{service.cta}</span>
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
-                    </a>
+                    {isExternal ? (
+                      <a
+                        href={service.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-burgundy hover:text-burgundy-dark transition-colors group/link"
+                      >
+                        <span>{service.cta}</span>
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
+                      </a>
+                    ) : (
+                      <Link
+                        href={service.href}
+                        className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-burgundy hover:text-burgundy-dark transition-colors group/link"
+                      >
+                        <span>{service.cta}</span>
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>

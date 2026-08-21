@@ -7,6 +7,7 @@ import GallerySection from "@/components/sections/gallery-section";
 import StyleSection from "@/components/sections/style-section";
 import AboutSection from "@/components/sections/about-us-section";
 import TestimonialsSection from "@/components/sections/testimonials-section";
+import FAQSection from "@/components/sections/faq-section";
 import ContactCTASection from "@/components/sections/contact-cta-section";
 import LocationSection from "@/components/sections/location-section";
 import LocalBusinessSchema from "@/components/seo/local-business-schema";
@@ -31,6 +32,7 @@ export default async function HomePage() {
       <StyleSection />
       <AboutSection />
       <TestimonialsSection />
+      <FAQSection />
       <ContactCTASection />
       <LocationSection />
     </>

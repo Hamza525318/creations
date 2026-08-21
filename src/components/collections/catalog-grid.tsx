@@ -1,6 +1,7 @@
 import React from "react";
 import { CatalogCategory, CatalogItem } from "@/lib/catalog/types";
 import { CATEGORIES } from "@/config/categories";
+import { siteConfig } from "@/config/site";
 import CatalogCard from "./catalog-card";
 import WhatsAppButton from "@/components/common/whatsapp-button";
 import Container from "@/components/layout/container";
@@ -61,10 +62,15 @@ export default function CatalogGrid({ category, items }: CatalogGridProps) {
                 variant="primary"
                 label={`Explore ${catDef.label} on WhatsApp`}
               />
-              <div className="flex items-center gap-1.5 text-xs text-taupe font-medium">
+              <a
+                href={siteConfig.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-taupe hover:text-burgundy font-medium transition-colors"
+              >
                 <MapPin className="h-3.5 w-3.5 text-burgundy" />
-                <span>Showroom: 2nd Main Rd, Besant Nagar</span>
-              </div>
+                <span>Showroom: {siteConfig.address.locality}, Chennai</span>
+              </a>
             </div>
           </div>
         )}
