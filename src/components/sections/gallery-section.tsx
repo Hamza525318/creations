@@ -19,16 +19,17 @@ export default async function GallerySection() {
         align="left"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 items-start">
         {hasMedia
-          ? galleryMedia.map((item, index) => (
+          ? galleryMedia.map((item) => (
               <div
                 key={item.publicId}
-                className="group flex flex-col space-y-3 bg-card p-4 rounded-2xl border border-border/70 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
+                className="group flex flex-col space-y-2.5 sm:space-y-3 bg-card p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-border/70 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
               >
                 <WebsiteImage
                   media={item}
                   aspectRatio="4/3"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full"
                 />
                 {/* Product Title and Description commented out as requested */}
@@ -49,13 +50,14 @@ export default async function GallerySection() {
           : fallbackProjects.map((project) => (
               <div
                 key={project.id}
-                className="group flex flex-col space-y-3 bg-card p-4 rounded-2xl border border-border/70 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
+                className="group flex flex-col space-y-2.5 sm:space-y-3 bg-card p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-border/70 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
               >
                 <WebsiteImage
                   media={null}
                   aspectRatio={project.aspectRatio}
                   fallbackCategory={project.category}
                   fallbackLabel={project.placeholderLabel}
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full"
                 />
 

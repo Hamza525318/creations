@@ -20,8 +20,8 @@ export default async function LocationSection() {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-        {/* Info Column */}
-        <div className="lg:col-span-5 flex flex-col justify-between bg-card p-6 sm:p-8 rounded-2xl border border-border/80 space-y-8">
+        {/* Info Column: Prominently displayed across all screens */}
+        <div className="w-full lg:col-span-5 flex flex-col justify-between bg-card p-6 sm:p-8 rounded-2xl border border-border/80 space-y-8">
           <div className="space-y-6">
             <div className="space-y-1">
               <h3 className="font-display text-3xl font-semibold text-burgundy">
@@ -95,8 +95,8 @@ export default async function LocationSection() {
           </div>
         </div>
 
-        {/* Media / Map Container */}
-        <div className="lg:col-span-7 flex flex-col justify-center items-center bg-sand/60 p-4 rounded-2xl border border-border/80 min-h-[360px] text-center relative overflow-hidden group">
+        {/* Media / Map Container: Hidden on mobile (<lg) to reduce vertical clutter */}
+        <div className="hidden lg:flex lg:col-span-7 flex-col justify-center items-center bg-sand/60 p-4 rounded-2xl border border-border/80 min-h-[360px] text-center relative overflow-hidden group">
           <WebsiteImage
             media={showroomMedia}
             aspectRatio="16/9"

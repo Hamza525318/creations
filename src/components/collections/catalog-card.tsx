@@ -21,36 +21,37 @@ export default function CatalogCard({ item }: CatalogCardProps) {
   const whatsappUrl = `https://wa.me/${rawNumber}?text=${whatsappMessage}`;
 
   return (
-    <div className="group flex flex-col justify-between bg-card rounded-2xl p-4 border border-border/80 shadow-2xs hover:border-burgundy/40 hover:shadow-md transition-all duration-300">
-      <div className="space-y-3.5">
+    <article className="group flex flex-col justify-between bg-card rounded-xl sm:rounded-2xl p-2.5 sm:p-4 border border-border/80 shadow-2xs hover:border-burgundy/40 hover:shadow-md transition-all duration-300">
+      <div className="space-y-2.5 sm:space-y-3.5">
         {/* Photo Container */}
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-sand/40 border border-border/70">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg sm:rounded-xl bg-sand/40 border border-border/70">
           <Image
             src={item.secureUrl}
             alt={item.alt || item.title || `${catDef.label} Design`}
             fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
           />
 
           {/* Subtle price tag overlay on image if price exists */}
           {item.priceDisplay && (
-            <div className="absolute bottom-2.5 right-2.5 bg-espresso/90 text-ivory text-xs font-semibold px-2.5 py-1 rounded-md backdrop-blur-xs font-sans shadow-sm">
+            <div className="absolute bottom-1.5 right-1.5 sm:bottom-2.5 sm:right-2.5 bg-espresso/90 text-ivory text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md backdrop-blur-xs font-sans shadow-xs">
               {item.priceDisplay}
             </div>
           )}
         </div>
 
         {/* Content Section (adapts cleanly if metadata absent) */}
-        <div className="space-y-1.5 px-0.5">
+        <div className="space-y-1 px-0.5">
           {item.title && (
-            <h3 className="font-display text-xl font-medium text-espresso group-hover:text-burgundy transition-colors leading-snug">
+            <h3 className="font-display text-sm sm:text-lg font-medium text-espresso group-hover:text-burgundy transition-colors leading-snug line-clamp-2">
               {item.title}
             </h3>
           )}
 
+          {/* Description shown on sm+ screens to preserve mobile compactness */}
           {item.description && (
-            <p className="font-sans text-xs text-taupe leading-relaxed">
+            <p className="hidden sm:block font-sans text-xs text-taupe leading-relaxed line-clamp-2">
               {item.description}
             </p>
           )}
@@ -58,8 +59,8 @@ export default function CatalogCard({ item }: CatalogCardProps) {
       </div>
 
       {/* Footer / WhatsApp Enquiry Action */}
-      <div className="pt-3 border-t border-border/40 mt-3 flex items-center justify-between">
-        <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-burgundy/80">
+      <div className="pt-2 sm:pt-3 border-t border-border/40 mt-2 sm:mt-3 flex items-center justify-between gap-1">
+        <span className="font-sans text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-burgundy/80 truncate">
           {catDef.label}
         </span>
 
@@ -67,12 +68,13 @@ export default function CatalogCard({ item }: CatalogCardProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-espresso hover:text-burgundy transition-colors py-1 px-2 rounded-lg hover:bg-sand/60"
+          className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-espresso hover:text-burgundy transition-colors py-1 px-1.5 sm:px-2 rounded-md sm:rounded-lg hover:bg-sand/60 shrink-0 min-h-[36px]"
+          aria-label={`Enquire about ${itemLabel} on WhatsApp`}
         >
-          <MessageCircle className="h-3.5 w-3.5 text-burgundy" />
+          <MessageCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-burgundy" />
           <span>Enquire</span>
         </a>
       </div>
-    </div>
+    </article>
   );
 }

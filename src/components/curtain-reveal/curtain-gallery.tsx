@@ -42,16 +42,17 @@ export default function CurtainGallery({ images }: CurtainGalleryProps) {
 
   if (hasImages) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 p-4 sm:p-6 bg-card/60 rounded-3xl border border-border/70">
+      <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-3 p-2 sm:p-6 bg-card/60 rounded-2xl sm:rounded-3xl border border-border/70">
         {images.map((item, index) => (
           <div
             key={item.publicId}
-            className="group flex flex-col space-y-3 bg-card p-3.5 rounded-2xl border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
+            className="group flex flex-col space-y-2 bg-card p-2 sm:p-3.5 rounded-xl sm:rounded-2xl border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
           >
             <WebsiteImage
               media={item}
               aspectRatio="4/3"
               alt={item.alt || `Curtain reveal project #${index + 1}`}
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
               className="w-full"
             />
             {/* Installation title & description commented out as requested */}
@@ -72,17 +73,18 @@ export default function CurtainGallery({ images }: CurtainGalleryProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 p-4 sm:p-6 bg-card/60 rounded-3xl border border-border/70">
+    <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-4 p-2 sm:p-6 bg-card/60 rounded-2xl sm:rounded-3xl border border-border/70">
       {FALLBACK_REVEAL_ITEMS.map((item) => (
         <div
           key={item.id}
-          className="group flex flex-col space-y-3 bg-card p-3.5 rounded-2xl border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
+          className="group flex flex-col space-y-2 bg-card p-2 sm:p-3.5 rounded-xl sm:rounded-2xl border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
         >
           <WebsiteImage
             media={null}
             aspectRatio="4/5"
             fallbackCategory={item.category}
             fallbackLabel={item.label}
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 25vw"
             className="w-full"
           />
           {/* Installation title & description commented out as requested */}
