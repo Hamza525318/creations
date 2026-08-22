@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { WebsiteMedia } from "@/lib/media/types";
 import WebsiteImage from "@/components/common/website-image";
+import ImageLightbox, { LightboxImage } from "@/components/gallery/image-lightbox";
 
 interface CurtainGalleryProps {
   images: WebsiteMedia[];
@@ -38,68 +41,76 @@ const FALLBACK_REVEAL_ITEMS = [
 ];
 
 export default function CurtainGallery({ images }: CurtainGalleryProps) {
+  const [activeImage, setActiveImage] = useState<LightboxImage | null>(null);
   const hasImages = images && images.length > 0;
 
-  if (hasImages) {
-    return (
-      <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-3 p-2 sm:p-6 bg-card/60 rounded-2xl sm:rounded-3xl border border-border/70">
-        {images.map((item, index) => (
-          <div
-            key={item.publicId}
-            className="group flex flex-col space-y-2 bg-card p-2 sm:p-3.5 rounded-xl sm:rounded-2xl border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
-          >
-            <WebsiteImage
-              media={item}
-              aspectRatio="4/3"
-              alt={item.alt || `Curtain reveal project #${index + 1}`}
-              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
-              className="w-full"
-            />
-            {/* Installation title & description commented out as requested */}
-            {/* 
-            <div className="flex items-center justify-between px-1">
-              <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-burgundy">
-                Installation #{index + 1}
-              </span>
-              <p className="font-display text-sm font-medium text-espresso group-hover:text-burgundy transition-colors truncate max-w-[200px]">
-                {item.alt || "CREATION'S Custom Furnishing"}
-              </p>
-            </div>
-            */}
-          </div>
-        ))}
-      </div>
-    );
-  }
+  const handleOpen = (img: LightboxImage) => {
+    if (img.secureUrl) {
+      setActiveImage(img);
+    }
+  };
 
   return (
-    <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-4 p-2 sm:p-6 bg-card/60 rounded-2xl sm:rounded-3xl border border-border/70">
-      {FALLBACK_REVEAL_ITEMS.map((item) => (
-        <div
-          key={item.id}
-          className="group flex flex-col space-y-2 bg-card p-2 sm:p-3.5 rounded-xl sm:rounded-2xl border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
-        >
-          <WebsiteImage
-            media={null}
-            aspectRatio="4/5"
-            fallbackCategory={item.category}
-            fallbackLabel={item.label}
-            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 25vw"
-            className="w-full"
-          />
-          {/* Installation title & description commented out as requested */}
-          {/* 
-          <div className="space-y-1 px-1">
-            <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-burgundy">
-              {item.category}
-            </span>
-            <h3 className="font-display text-base font-medium text-espresso group-hover:text-burgundy transition-colors">
-              {item.title}
-            </h3>
-          </div>
-          */}
+    <>
+      {hasImages ? (
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 p-2.5 sm:p-6 bg-card/60 rounded-2xl sm:rounded-3xl border border-border/70">
+          {images.map((item, index) => {
+            const label = item.alt || `Curtain installation #${index + 1}`;
+            const payload: LightboxImage = {
+              secureUrl: item.secureUrl,
+              title: label,
+              category: "Curtain Reveal Installation",
+            };
+
+            return (
+              <button
+                key={item.publicId}
+                type="button"
+                onClick={() => handleOpen(payload)}
+                aria-label={`Open enlarged view of ${label}`}
+                className="group flex flex-col space-y-2 bg-card p-2 sm:p-3.5 rounded-xl sm:rounded-2xl border border-border/80 text-left transition-all duration-300 hover:border-burgundy/50 hover:shadow-lg focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-burgundy cursor-pointer w-full"
+              >
+                <div className="w-full overflow-hidden rounded-lg sm:rounded-xl">
+                  <WebsiteImage
+                    media={item}
+                    aspectRatio="4/3"
+                    alt={label}
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
+                    className="w-full transition-transform duration-500 ease-out group-hover:scale-[1.025]"
+                  />
+                </div>
+              </button>
+            );
+          })}
         </div>
-      ))}
-    </div>
+      ) : (
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 p-2.5 sm:p-6 bg-card/60 rounded-2xl sm:rounded-3xl border border-border/70">
+          {FALLBACK_REVEAL_ITEMS.map((item) => (
+            <div
+              key={item.id}
+              className="group flex flex-col space-y-2 bg-card p-2 sm:p-3.5 rounded-xl sm:rounded-2xl border border-border/80 transition-all duration-300 hover:border-burgundy/40 hover:shadow-md"
+            >
+              <div className="w-full overflow-hidden rounded-lg sm:rounded-xl">
+                <WebsiteImage
+                  media={null}
+                  aspectRatio="4/5"
+                  fallbackCategory={item.category}
+                  fallbackLabel={item.label}
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                  className="w-full"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Shared Lightbox Dialog */}
+      <ImageLightbox
+        image={activeImage}
+        isOpen={Boolean(activeImage)}
+        onClose={() => setActiveImage(null)}
+      />
+    </>
   );
 }
