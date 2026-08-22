@@ -34,22 +34,17 @@ export default function CurtainRevealAnimation({ images }: CurtainRevealAnimatio
 
     let timeoutId: NodeJS.Timeout | undefined;
 
-    // 2. IntersectionObserver with ~80% threshold + 400ms deliberate delay
+    // 2. IntersectionObserver trigger: reliably fires when section enters view
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Substantially inside viewport (>= 75% on mobile / 80% on desktop)
-        const isSubstantial = entry.intersectionRatio >= 0.75;
-
-        if (isSubstantial) {
-          // Start deliberate ~400ms delay
+        if (entry.isIntersecting) {
           if (!timeoutId) {
             timeoutId = setTimeout(() => {
               setIsRevealed(true);
               observer.disconnect();
-            }, 400);
+            }, 300);
           }
         } else {
-          // User scrolled away before delay finished -> cancel pending reveal
           if (timeoutId) {
             clearTimeout(timeoutId);
             timeoutId = undefined;
@@ -57,8 +52,8 @@ export default function CurtainRevealAnimation({ images }: CurtainRevealAnimatio
         }
       },
       {
-        threshold: [0, 0.5, 0.75, 0.85],
-        rootMargin: "0px 0px -5% 0px",
+        threshold: [0.15, 0.3],
+        rootMargin: "0px 0px -40px 0px",
       }
     );
 

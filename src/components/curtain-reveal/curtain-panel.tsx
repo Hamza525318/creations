@@ -12,22 +12,22 @@ export default function CurtainPanel({
   isRevealed,
   reducedMotion = false,
 }: CurtainPanelProps) {
-  // Movement style when revealed
+  // Movement style when revealed: completely parts off-screen and becomes non-blocking
   const transformClass = reducedMotion
     ? side === "left"
-      ? "-translate-x-full opacity-0"
-      : "translate-x-full opacity-0"
+      ? "-translate-x-full opacity-0 pointer-events-none"
+      : "translate-x-full opacity-0 pointer-events-none"
     : isRevealed
     ? side === "left"
-      ? "-translate-x-[102%] opacity-0 sm:opacity-10 sm:-translate-x-[92%] lg:-translate-x-[90%]"
-      : "translate-x-[102%] opacity-0 sm:opacity-10 sm:translate-x-[92%] lg:translate-x-[90%]"
+      ? "-translate-x-full opacity-0 pointer-events-none"
+      : "translate-x-full opacity-0 pointer-events-none"
     : "translate-x-0 opacity-100";
 
   return (
     <div
-      aria-hidden="true"
+      aria-hidden={isRevealed}
       className={cn(
-        "absolute top-0 bottom-0 z-20 w-1/2 overflow-hidden pointer-events-none select-none transition-all duration-1000 md:duration-1200 ease-out will-change-transform",
+        "absolute top-0 bottom-0 z-20 w-1/2 overflow-hidden select-none transition-all duration-1000 md:duration-1200 ease-out will-change-transform",
         side === "left" ? "left-0 shadow-[8px_0_24px_rgba(41,36,31,0.35)]" : "right-0 shadow-[-8px_0_24px_rgba(41,36,31,0.35)]",
         transformClass
       )}

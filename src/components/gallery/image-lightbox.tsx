@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import {
   Dialog,
   DialogContent,
@@ -34,9 +33,7 @@ export default function ImageLightbox({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent
-        className="max-w-[92vw] sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl p-3 sm:p-5 bg-card/95 backdrop-blur-md border-border/80 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden"
-      >
+      <DialogContent className="max-w-[94vw] sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl p-3 sm:p-5 bg-card/95 backdrop-blur-md border-border/80 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
         <DialogTitle className="sr-only">{titleText}</DialogTitle>
         <DialogDescription className="sr-only">
           Enlarged photograph view for {titleText}
@@ -44,15 +41,15 @@ export default function ImageLightbox({
 
         <div className="flex flex-col space-y-3">
           {/* Main Large Image Container */}
-          <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[78vh] rounded-xl sm:rounded-2xl overflow-hidden bg-sand/30 flex items-center justify-center">
-            <Image
-              src={image.secureUrl}
-              alt={titleText}
-              fill
-              priority
-              sizes="(max-width: 768px) 92vw, (max-width: 1280px) 85vw, 1400px"
-              className="object-contain"
-            />
+          <div className="relative w-full h-[55vh] sm:h-[68vh] lg:h-[76vh] rounded-xl sm:rounded-2xl overflow-hidden bg-sand/40 flex items-center justify-center p-2">
+            {image.secureUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={image.secureUrl}
+                alt={titleText}
+                className="max-h-full max-w-full object-contain mx-auto rounded-lg shadow-sm"
+              />
+            ) : null}
           </div>
 
           {/* Minimal Caption Bar */}
@@ -69,7 +66,7 @@ export default function ImageLightbox({
             <button
               type="button"
               onClick={onClose}
-              className="font-sans text-xs font-semibold text-taupe hover:text-burgundy px-3 py-1.5 rounded-lg bg-sand/50 hover:bg-sand transition-colors cursor-pointer"
+              className="font-sans text-xs font-semibold text-taupe hover:text-burgundy px-3 py-1.5 rounded-lg bg-sand/60 hover:bg-sand transition-colors cursor-pointer"
             >
               Close
             </button>
