@@ -1,19 +1,16 @@
-# CREATION'S Technical SEO Implementation Guide
+# CREATION'S Technical SEO Implementation Guide (v2.0)
 
 This document is the canonical technical SEO reference and operational guide for the **CREATION'S** website.
 
 ---
 
-## 1. Overview & Technical Architecture
+## 1. Business Positioning & Target Audience
 
-The CREATION'S website is built on Next.js App Router (Server Components by default) with an integrated SEO architecture adhering strictly to Google Search Central guidelines:
-
-* **Canonical Base Origin (`metadataBase`)**: Configured globally in `src/app/layout.tsx` using `siteConfig.url` (`NEXT_PUBLIC_SITE_URL`).
-* **Self-Referencing Canonical URLs**: Every indexable page defines its own canonical alternate link to prevent duplicate content indexing.
-* **No Meta Keywords**: Obsolete `<meta name="keywords">` tags are intentionally omitted. Keywords are naturally woven into semantic H1/H2 tags, page body copy, internal anchor text, and structured data.
-* **Dynamic Structured Data (JSON-LD)**: Programmatically generated JSON-LD for Local Business (`HomeGoodsStore`), Website (`WebSite`), and Breadcrumbs (`BreadcrumbList`).
-* **Admin / API Indexing Protection**: Sensitive routes (`/admin`, `/api`) are protected via server-side authentication, `robots.txt` disallows, and `robots: { index: false, follow: false }` metadata.
-* **Core Web Vitals & Image Optimization**: Priority loading on hero and category covers (LCP), Cloudinary image transformations, explicit aspect ratios (CLS prevention), and standard lazy loading below the fold.
+* **Primary Proposition**: **Curtains and Blinds Store in Besant Nagar, Chennai**
+* **Supporting Categories**: Upholstery, Bedspreads & Cushions
+* **Geographic Service Scope**:
+  * **Primary Core Hub**: Besant Nagar (Showroom on Urur Olcott Kuppam Rd near Rajaji Bhavan)
+  * **Secondary Neighbourhoods**: Adyar, ECR (East Coast Road), Thiruvanmiyur, Kotturpuram, South Chennai
 
 ---
 
@@ -23,8 +20,9 @@ All public components, footer, showroom section, and structured data source thei
 
 | Property | Official Business Information |
 | :--- | :--- |
-| **Business Name** | **CREATION'S** (Legal Name: *CREATION'S Home Furnishings*) |
-| **Tagline** | *Changing Home Styles* |
+| **Business Name** | **CREATION'S** (Legal Name: *CREATION'S Curtains & Blinds Store*) |
+| **Tagline** | *Curtains and Blinds Store in Besant Nagar* |
+| **Canonical URL** | `https://www.creations.ind.in` |
 | **Address** | New no: 37 (Old no: 11), 1, Urur Olcott Kuppam Rd, near Rajaji Bhavan, Besant Nagar, Chennai, Tamil Nadu 600090 |
 | **Landline Phone** | `044 2491 9327` (`+91 44 2491 9327`) |
 | **Mobile & WhatsApp** | `+91 95970 90006` |
@@ -33,106 +31,84 @@ All public components, footer, showroom section, and structured data source thei
 
 ---
 
-## 3. Page-to-Keyword Mapping
+## 3. Keyword Hierarchy & Mapping
 
-Each public page targets a distinct commercial and local search topic without keyword stuffing:
+### Keyword Tiers
+* **Tier 1 (Highest Local Priority)**:
+  * `Curtains in Besant Nagar`
+  * `Blinds in Besant Nagar`
+  * `Curtain and Blinds Store in Besant Nagar`
+* **Tier 2 (Chennai-Wide Commercial Intent)**:
+  * `Curtains Chennai`
+  * `Blinds Chennai`
+  * `Curtain Store Chennai`
+  * `Window Blinds Chennai`
+* **Tier 3 (Product Specific Variants)**:
+  * `Ready Made Curtains`
+  * `Ready to Fit Curtains`
+  * `Sheer Curtains Chennai`
+  * `Blackout Curtains Chennai`
+  * `Roman Blinds Chennai`
+* **Tier 4 (Nearby Contextual Relevance)**:
+  * `Curtains Adyar`
+  * `Blinds Adyar`
+  * `Curtains ECR`
+  * `Blinds ECR`
 
-| Route | Primary Keyword Topic | Secondary Local Terms | Primary H1 Direction |
+### Page-to-Keyword Mapping Matrix
+
+| Route | Primary Keyword Topic | Secondary Terms | Primary H1 / Title Direction |
 | :--- | :--- | :--- | :--- |
-| `/` | *Home furnishings Besant Nagar*, *Home furnishings Chennai* | *Curtains & blinds Besant Nagar*, *Home decor store Chennai* | Editorial brand hero with location context in surrounding copy |
-| `/curtains` | *Curtains in Besant Nagar*, *Curtains Chennai* | *Curtain shop Besant Nagar*, *Sheer curtains Chennai*, *Blackout drapes* | *Curtains designed around your space.* |
-| `/blinds` | *Blinds in Besant Nagar*, *Blinds Chennai* | *Window blinds Chennai*, *Roman blinds Besant Nagar*, *Roller shades* | *Clean, considered window solutions.* |
-| `/upholstery` | *Upholstery in Besant Nagar*, *Upholstery Chennai* | *Sofa upholstery Chennai*, *Furniture re-covering Besant Nagar*, *Upholstery fabrics* | *Give familiar furniture a fresh perspective.* |
-| `/bedspreads` | *Bedspreads in Besant Nagar*, *Bedspreads Chennai* | *Bedspread shop Chennai*, *Luxury quilts*, *Bedroom linens Besant Nagar* | *Comfort, texture and character for the bedroom.* |
+| `/` | *Curtains & Blinds Store in Besant Nagar* | *Home Furnishings Chennai, Besant Nagar showroom* | **Title**: `Curtains & Blinds Store in Besant Nagar, Chennai \| CREATION'S`<br>**H1**: `Curtains and Blinds Store in Besant Nagar` |
+| `/curtains` | *Curtains in Besant Nagar* | *Curtains Chennai, Ready Made Curtains, Ready to Fit Curtains, Sheer Curtains* | **Title**: `Curtains in Besant Nagar, Chennai \| CREATION'S`<br>**H1**: `Curtains for Homes in Besant Nagar and Chennai` |
+| `/blinds` | *Blinds in Besant Nagar* | *Blinds Chennai, Window Blinds Chennai, Roman Blinds, Roller Shades, Wooden Blinds* | **Title**: `Blinds in Besant Nagar, Chennai \| CREATION'S`<br>**H1**: `Window Blinds for Besant Nagar and Chennai Homes` |
+| `/upholstery` | *Upholstery in Besant Nagar* | *Upholstery Chennai, Sofa Re-covering, Upholstery Fabrics* | **Title**: `Upholstery in Besant Nagar, Chennai \| CREATION'S`<br>**H1**: `Give familiar furniture a fresh perspective.` |
+| `/bedspreads` | *Bedspreads in Besant Nagar* | *Bedspreads Chennai, Luxury Quilts, Bedroom Linens* | **Title**: `Bedspreads in Besant Nagar, Chennai \| CREATION'S`<br>**H1**: `Comfort, texture and character for the bedroom.` |
+| `/measurement-guide` | *How to Measure Curtains & Blinds* | *Window measurement guide, inside recess, outside recess* | **Title**: `Window Measurement Guide \| CREATION'S Besant Nagar`<br>**H1**: `Window Measurement Guide` |
 
 ---
 
-## 4. Structured Data (Schema.org JSON-LD)
+## 4. Contextual Location Strategy (Adyar & ECR)
 
-Implemented via React server components in `src/components/seo/`:
-
-### A. Local Business Schema (`HomeGoodsStore`)
-* **File**: [`src/components/seo/local-business-schema.tsx`](src/components/seo/local-business-schema.tsx)
-* **Location**: Rendered on Homepage (`/`)
-* **Properties**:
-  * `@type`: `HomeGoodsStore`
-  * `@id`: `https://creations-home.com/#business`
-  * `name`: `CREATION'S`
-  * `telephone`: `+91 95970 90006`
-  * `address`: PostalAddress (Besant Nagar, Chennai 600090)
-  * `geo`: GeoCoordinates (`13.0002`, `80.2667`)
-  * `openingHoursSpecification`: Mo-Su 11:00-20:00
-  * `logo`: Owner-managed logo from Cloudinary (`branding.logo-primary`) with fallback
-
-### B. WebSite Schema (`WebSite`)
-* **File**: [`src/components/seo/website-schema.tsx`](src/components/seo/website-schema.tsx)
-* **Location**: Rendered on Homepage (`/`)
-* **Properties**:
-  * `@type`: `WebSite`
-  * `@id`: `https://creations-home.com/#website`
-  * `publisher`: Linked directly to `#business`
-
-### C. Breadcrumb Schema (`BreadcrumbList`)
-* **File**: [`src/components/seo/breadcrumb-schema.tsx`](src/components/seo/breadcrumb-schema.tsx)
-* **Location**: Rendered on each Category Page (`/curtains`, `/blinds`, `/upholstery`, `/bedspreads`)
-* **Hierarchy**: `Home > [Category Name]`
+* **No Thin Duplicate Pages**: We do not create separate `/curtains-adyar` or `/curtains-ecr` pages without unique local customer projects, distinct photos, or independent physical showrooms.
+* **Contextual In-Content Relevance**: Adyar and ECR are naturally cited across the homepage hero, showroom location section, and category guides as nearby served neighbourhoods within a 5–15 minute drive of our Besant Nagar studio.
 
 ---
 
-## 5. Crawl & Index Configuration
+## 5. Structured Data (Schema.org JSON-LD)
 
-### Sitemap (`src/app/sitemap.ts`)
-* Accessible at: `/sitemap.xml`
-* Outputs absolute production URLs for all public canonical routes (`/`, `/curtains`, `/blinds`, `/upholstery`, `/bedspreads`).
-* Excludes `/admin`, `/api`, and auth routes.
+Implemented via Server Components in `src/components/seo/`:
 
-### Robots Directive (`src/app/robots.ts`)
-* Accessible at: `/robots.txt`
-* Rules:
-  ```text
-  User-agent: *
-  Allow: /
-  Disallow: /admin/
-  Disallow: /api/
+1. **LocalBusiness / HomeGoodsStore** (`src/components/seo/local-business-schema.tsx`):
+   * `@type`: `HomeGoodsStore`
+   * `@id`: `https://www.creations.ind.in/#business`
+   * `name`: `CREATION'S`
+   * `legalName`: `CREATION'S Curtains & Blinds Store`
+   * `areaServed`: `["Besant Nagar", "Adyar", "ECR", "Chennai", "Tamil Nadu"]`
+   * `hasMap`: Google Maps Showroom URL
+   * `openingHoursSpecification`: Mo-Su 11:00–20:00
 
-  Sitemap: https://creations-home.com/sitemap.xml
-  ```
+2. **WebSite Schema** (`src/components/seo/website-schema.tsx`):
+   * `@type`: `WebSite`
+   * `publisher`: Linked directly to `#business`
 
-### Admin Protection
-* Protected with `noindex, nofollow` in `src/app/admin/layout.tsx`.
+3. **BreadcrumbList Schema** (`src/components/seo/breadcrumb-schema.tsx`):
+   * Generated dynamically on each category route (`Home > Curtains`, etc.)
 
 ---
 
-## 6. Image SEO & Core Web Vitals
+## 6. Sitemaps, Robots & Indexing Protection
 
-* **Largest Contentful Paint (LCP)**:
-  * Homepage hero image and Category cover images are marked with `priority={true}` in Next.js `<Image />`.
-  * Proper `sizes` attributes prevent mobile devices from downloading desktop-scale assets.
-* **Cumulative Layout Shift (CLS)**:
-  * Image containers enforce explicit aspect ratios (`4:5`, `16:9`, `16:10`, etc.) using Tailwind aspect ratio utilities and Next.js Image `fill`.
-* **Image Accessibility & Discoverability**:
-  * Mandatory alt text on all owner-uploaded catalog items (`creations-catalog`).
-  * Alt text is meaningful and descriptive for screen-readers and Google Image Search.
+* **Sitemap**: `/sitemap.xml` dynamically generated in `src/app/sitemap.ts` targeting canonical `https://www.creations.ind.in`.
+* **Robots**: `/robots.txt` generated in `src/app/robots.ts`.
+* **Admin & API Protection**: Disallowed in `robots.txt` and flagged with `noindex, nofollow` headers.
 
 ---
 
-## 7. Manual Search Console & Google Business Profile Tasks
+## 7. Search Console Tracking & Review
 
-### Google Search Console Setup
-1. **Property Creation**: Add `https://creations-home.com` as a Domain or URL prefix property in [Google Search Console](https://search.google.com/search-console).
-2. **HTML Verification**: Copy the Google verification token into the production environment variable:
-   ```env
-   GOOGLE_SITE_VERIFICATION=your_verification_token
-   ```
-3. **Submit Sitemap**: In GSC, navigate to **Sitemaps** and submit `sitemap.xml`.
-4. **URL Inspection**: Test live URL rendering for `/`, `/curtains`, `/blinds`, `/upholstery`, and `/bedspreads`.
-5. **Monitor Indexing & Core Web Vitals**: Review the **Coverage** and **Core Web Vitals** reports 7–14 days after launch.
-
-### Google Business Profile Checklist
-* [x] **Match Exact Business Name**: "CREATION'S"
-* [x] **Match Verified Address**: New no: 37 (Old no: 11), 1, Urur Olcott Kuppam Rd, near Rajaji Bhavan, Besant Nagar, Chennai 600090
-* [x] **Match Phone Numbers**: Mobile `+91 95970 90006`, Landline `044 2491 9327`
-* [x] **Match Operating Hours**: Monday – Sunday: 11:00 AM – 8:00 PM
-* [ ] **Website URL**: Ensure Google Business Profile website link points to canonical `https://creations-home.com`.
-* [ ] **Primary Category**: Set primary category on GBP to *Curtain store* / *Home goods store* / *Blinds shop*.
-* [ ] **Showroom Photos**: Add high-resolution photos of the Besant Nagar showroom and fabric displays.
+Track performance over 4–8 week windows across query clusters:
+* **Brand**: `creations besant nagar`, `creations curtains`, `creations chennai`
+* **Curtains**: `curtains besant nagar`, `curtains chennai`, `curtain shop besant nagar`, `ready made curtains chennai`
+* **Blinds**: `blinds besant nagar`, `blinds chennai`, `window blinds chennai`, `roman blinds chennai`
+* **Nearby Areas**: `curtains adyar`, `blinds adyar`, `curtains ecr`, `blinds ecr`

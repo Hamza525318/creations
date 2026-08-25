@@ -27,7 +27,7 @@ export function createMetadata({
     url: `${siteConfig.url}/og-default.jpg`,
     width: 1200,
     height: 630,
-    alt: `${siteConfig.name} - Home Furnishings in Besant Nagar, Chennai`,
+    alt: `${siteConfig.name} - Curtains & Blinds Store in Besant Nagar, Chennai`,
   };
 
   const ogImage = image

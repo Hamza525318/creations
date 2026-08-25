@@ -6,11 +6,11 @@ export const CATEGORIES: Record<CatalogCategory, CategoryDefinition> = {
     label: "Curtains",
     href: "/curtains",
     coverSlot: "categories.curtains",
-    eyebrow: "Custom Curtains & Drapery",
-    heading: "Curtains designed around your space.",
+    eyebrow: "Bespoke & Ready Made Curtains",
+    heading: "Curtains for Homes in Besant Nagar and Chennai",
     description:
-      "Explore sheer curtains, lined drapes, rich textures, and bespoke pleat styles tailored to complement your room light, privacy, and architectural character.",
-    heroSubtitle: "Hand-finished drapery, blackout linings, and sheer fabrics tailored in Chennai.",
+      "Explore custom-tailored drapes, sheer linen curtains, blackout linings, and ready-made window treatments crafted to complement your room light, privacy, and architectural character.",
+    heroSubtitle: "Hand-finished drapery, ready made curtains, sheer fabrics & motorised tracks in Besant Nagar.",
     cloudinaryFolder: "creations/catalog/curtains",
   },
   blinds: {
@@ -19,10 +19,10 @@ export const CATEGORIES: Record<CatalogCategory, CategoryDefinition> = {
     href: "/blinds",
     coverSlot: "categories.blinds",
     eyebrow: "Tailored Window Blinds",
-    heading: "Clean, considered window solutions.",
+    heading: "Window Blinds for Besant Nagar and Chennai Homes",
     description:
-      "Precision window blinds providing effortless light control, modern privacy, and crisp architectural lines for contemporary living spaces and bedrooms.",
-    heroSubtitle: "Roman blinds, roller shades, textured wooden blinds, and motorised options.",
+      "Precision window blinds providing effortless light control, modern privacy, and crisp architectural lines. Explore custom Roman blinds, roller shades, wooden blinds, and motorised systems.",
+    heroSubtitle: "Roman blinds, roller shades, textured wooden blinds, and motorised options tailored in Chennai.",
     cloudinaryFolder: "creations/catalog/blinds",
   },
   upholstery: {
@@ -33,7 +33,7 @@ export const CATEGORIES: Record<CatalogCategory, CategoryDefinition> = {
     eyebrow: "Bespoke Upholstery & Fabrics",
     heading: "Give familiar furniture a fresh perspective.",
     description:
-      "Durable, tactile upholstery fabrics and custom re-covering for sofas, accent lounge chairs, headboards, dining chairs, and decorative cushions.",
+      "Durable, tactile upholstery fabrics and custom re-covering for sofas, accent lounge chairs, headboards, dining chairs, and decorative cushions in Besant Nagar, Chennai.",
     heroSubtitle: "High-rub count linens, velvets, textured weaves, and performance textiles.",
     cloudinaryFolder: "creations/catalog/upholstery",
   },
@@ -45,7 +45,7 @@ export const CATEGORIES: Record<CatalogCategory, CategoryDefinition> = {
     eyebrow: "Luxury Bedspreads & Linens",
     heading: "Comfort, texture and character for the bedroom.",
     description:
-      "Coordinated bedspreads, tailored quilts, duvet ensembles, and bespoke pillow pairings designed for a restorative, layered sanctuary.",
+      "Coordinated bedspreads, tailored quilts, duvet ensembles, and bespoke pillow pairings designed for a restorative, layered sanctuary in Chennai.",
     heroSubtitle: "Pure cottons, quilted velvets, and coordinated bedroom linens.",
     cloudinaryFolder: "creations/catalog/bedspreads",
   },

@@ -29,15 +29,15 @@ export default async function HeroSection() {
                 Curtains · Blinds · Upholstery · Bedspreads
               </p>
 
-              {/* Main Headline */}
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[54px] font-medium leading-[1.1] tracking-tight text-espresso">
-                Furnish your home with character.
+              {/* Main Headline (Target H1) */}
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[52px] font-medium leading-[1.1] tracking-tight text-espresso">
+                Curtains and Blinds Store in Besant Nagar
               </h1>
             </div>
 
             {/* Supporting Copy */}
             <p className="font-sans text-sm sm:text-base text-taupe leading-relaxed max-w-xl">
-              CREATION&apos;S helps you select custom curtains, window blinds, upholstery fabrics, and luxury bedspreads that suit your room, light, and personal style.
+              CREATION&apos;S is a curtains and blinds store in Besant Nagar, Chennai, offering custom drapery, precision window blinds, ready-made options, upholstery fabrics, and luxury bedspreads for residential interiors.
             </p>
 
             {/* CTA Group */}
@@ -55,11 +55,11 @@ export default async function HeroSection() {
               <WhatsAppButton variant="secondary" size="default" />
             </div>
 
-            {/* Subtle Gold Accent Divider */}
+            {/* Subtle Gold Accent Divider / Service Area Context */}
             <div className="pt-2 flex items-center gap-3 w-full">
               <div className="h-[1px] w-12 bg-gold/50" />
               <span className="font-display text-xs italic text-taupe/80">
-                Personalised local guidance & custom tailoring
+                Serving Besant Nagar, Adyar, ECR, and South Chennai homes
               </span>
             </div>
           </div>
@@ -75,8 +75,8 @@ export default async function HeroSection() {
                 <WebsiteImage
                   media={heroMedia}
                   aspectRatio="16/10"
-                  fallbackCategory="Living Room Drapery"
-                  fallbackLabel="Main Living Curtain Installation"
+                  fallbackCategory="Curtains & Drapery"
+                  fallbackLabel="Living Room Curtains Installation"
                   priority
                   sizes="(max-width: 1024px) 75vw, 40vw"
                   className="w-full shadow-lg border-2 border-card max-h-[300px] sm:max-h-[340px]"
@@ -88,8 +88,8 @@ export default async function HeroSection() {
                 <WebsiteImage
                   media={secondaryHeroMedia}
                   aspectRatio="16/10"
-                  fallbackCategory="Fabric & Texture"
-                  fallbackLabel="Bespoke Detail & Texture"
+                  fallbackCategory="Window Blinds"
+                  fallbackLabel="Custom Window Blinds in Besant Nagar"
                   sizes="(max-width: 1024px) 60vw, 32vw"
                   className="w-full shadow-2xl border-4 border-card max-h-[240px] sm:max-h-[280px]"
                 />

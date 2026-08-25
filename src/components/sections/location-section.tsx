@@ -14,8 +14,8 @@ export default async function LocationSection() {
     <Section id="location" variant="white">
       <SectionHeading
         eyebrow="Visit Our Showroom"
-        heading="Find us in Besant Nagar."
-        description="Experience our drapery fabrics, blinds mechanisms, and upholstery swatches in person."
+        heading="Visit Our Curtains & Blinds Showroom in Besant Nagar"
+        description="Located in Besant Nagar and conveniently accessible from Adyar, ECR, and South Chennai neighbourhoods. Experience our drapery fabrics, blinds mechanisms, and upholstery swatches in person."
         align="left"
       />
 
@@ -39,6 +39,9 @@ export default async function LocationSection() {
                   <h4 className="font-sans text-sm font-semibold">Showroom Address</h4>
                   <p className="font-sans text-sm text-taupe leading-relaxed">
                     {siteConfig.address.fullAddress}
+                  </p>
+                  <p className="font-sans text-xs text-taupe/80 pt-1">
+                    Conveniently accessible from Besant Nagar, Adyar, ECR & Thiruvanmiyur.
                   </p>
                 </div>
               </div>

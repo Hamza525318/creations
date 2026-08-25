@@ -22,7 +22,7 @@ export default function LocalBusinessSchema({
     legalName: siteConfig.legalName,
     url: siteConfig.url,
     description:
-      "Premier home furnishing showroom in Besant Nagar, Chennai. Specialising in custom curtains, precision blinds, upholstery fabrics, and luxury bedspreads.",
+      "Curtains and blinds store in Besant Nagar, Chennai. Specialising in custom drapery, ready made curtains, precision window blinds, upholstery fabrics, and luxury bedspreads for homes in Besant Nagar, Adyar, ECR, and South Chennai.",
     logo: logoUrl,
     image: imageUrl,
     telephone: siteConfig.phone,
@@ -47,6 +47,10 @@ export default function LocalBusinessSchema({
       closes: item.closes,
     })),
     priceRange: "₹₹",
+    areaServed: siteConfig.areaServed.map((area) => ({
+      "@type": "City",
+      name: area,
+    })),
     sameAs: [siteConfig.socialLinks.instagram],
   };
 

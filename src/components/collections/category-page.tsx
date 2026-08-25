@@ -5,6 +5,7 @@ import { getCatalogItems } from "@/lib/catalog/queries";
 import { getMediaForSlot } from "@/lib/media/queries";
 import CategoryHero from "./category-hero";
 import CatalogGrid from "./catalog-grid";
+import CategorySEOContent from "./category-seo-content";
 import CategoryContactCTA from "./category-contact-cta";
 import RelatedCategories from "./related-categories";
 import BreadcrumbSchema from "@/components/seo/breadcrumb-schema";
@@ -36,6 +37,7 @@ export default async function CategoryPage({ category }: CategoryPageProps) {
       <BreadcrumbSchema items={[{ name: config.label, url: config.href }]} />
       <CategoryHero config={config} coverMedia={coverMedia} />
       <CatalogGrid category={category} items={items} />
+      <CategorySEOContent category={category} />
       <CategoryContactCTA config={config} />
       <RelatedCategories currentCategory={category} covers={covers} />
     </div>
