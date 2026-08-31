@@ -1,14 +1,16 @@
 import React from "react";
 import WebsiteImage from "@/components/common/website-image";
+import BrandLogo from "@/components/common/brand-logo";
 import WhatsAppButton from "@/components/common/whatsapp-button";
 import { Button } from "@/components/ui/button";
 import { getMediaForSlot } from "@/lib/media/queries";
 import { MapPin, ArrowRight } from "lucide-react";
 
 export default async function HeroSection() {
-  const [heroMedia, secondaryHeroMedia] = await Promise.all([
+  const [heroMedia, secondaryHeroMedia, logoMedia] = await Promise.all([
     getMediaForSlot("hero.main"),
     getMediaForSlot("hero.secondary"),
+    getMediaForSlot("branding.logo-primary"),
   ]);
 
   return (
@@ -35,9 +37,18 @@ export default async function HeroSection() {
               </h1>
             </div>
 
-            {/* Supporting Copy */}
+            {/* Supporting Copy with Inline Brand Logo */}
             <p className="font-sans text-sm sm:text-base text-taupe leading-relaxed max-w-xl">
-              CREATION&apos;S is a curtains and blinds store in Besant Nagar, Chennai, offering custom drapery, precision window blinds, ready-made options, upholstery fabrics, and luxury bedspreads for residential interiors.
+              <span className="inline-flex items-center align-middle mr-1.5 -translate-y-[1px]">
+                <BrandLogo
+                  media={logoMedia}
+                  height={28}
+                  width={120}
+                  imageClassName="h-5 sm:h-6 w-auto object-contain"
+                  fallbackClassName="font-semibold text-espresso"
+                />
+              </span>
+              is a curtains and blinds store in Besant Nagar, Chennai, offering custom drapery, precision window blinds, ready-made options, upholstery fabrics, and luxury bedspreads for residential interiors.
             </p>
 
             {/* CTA Group */}

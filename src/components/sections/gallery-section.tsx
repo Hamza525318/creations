@@ -18,17 +18,19 @@ export default async function GallerySection() {
           <span className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-burgundy block">
             Featured Projects
           </span>
-          <div className="flex flex-wrap items-center gap-2.5">
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-espresso">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-espresso leading-none">
               Spaces by
             </h2>
-            <BrandLogo
-              media={logoMedia}
-              height={44}
-              width={160}
-              imageClassName="h-8 sm:h-10 w-auto object-contain"
-              fallbackClassName="text-burgundy text-3xl sm:text-4xl font-semibold"
-            />
+            <div className="inline-flex items-center">
+              <BrandLogo
+                media={logoMedia}
+                height={56}
+                width={220}
+                imageClassName="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain"
+                fallbackClassName="text-burgundy text-3xl sm:text-4xl lg:text-5xl font-semibold"
+              />
+            </div>
           </div>
         </div>
       </div>

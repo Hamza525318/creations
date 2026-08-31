@@ -33,15 +33,15 @@ export default async function AboutSection() {
         {/* Story Content Column */}
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-3">
-            <div className="flex items-center gap-2.5">
+            <div className="flex flex-wrap items-center gap-3">
               <BrandLogo
                 media={logoMedia}
-                height={40}
-                width={150}
-                imageClassName="h-8 sm:h-9 w-auto object-contain"
-                fallbackClassName="text-burgundy text-lg font-bold"
+                height={48}
+                width={190}
+                imageClassName="h-9 sm:h-11 md:h-12 w-auto object-contain"
+                fallbackClassName="text-burgundy text-xl sm:text-2xl font-bold"
               />
-              <span className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-burgundy">
+              <span className="font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-burgundy">
                 · Besant Nagar Studio
               </span>
             </div>
