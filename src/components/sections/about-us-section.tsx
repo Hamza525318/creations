@@ -1,13 +1,17 @@
 import React from "react";
 import Section from "@/components/layout/section";
 import WebsiteImage from "@/components/common/website-image";
+import BrandLogo from "@/components/common/brand-logo";
 import WhatsAppButton from "@/components/common/whatsapp-button";
 import { Button } from "@/components/ui/button";
 import { getMediaForSlot } from "@/lib/media/queries";
 import { MapPin, CheckCircle2 } from "lucide-react";
 
 export default async function AboutSection() {
-  const aboutMedia = await getMediaForSlot("about.main");
+  const [aboutMedia, logoMedia] = await Promise.all([
+    getMediaForSlot("about.main"),
+    getMediaForSlot("branding.logo-primary"),
+  ]);
 
   return (
     <Section id="about" variant="sand">
@@ -20,7 +24,7 @@ export default async function AboutSection() {
               media={aboutMedia}
               aspectRatio="4/5"
               fallbackCategory="Besant Nagar Showroom"
-              fallbackLabel="CREATION'S Store & Fabric Gallery"
+              fallbackLabel="Showroom & Fabric Gallery"
               className="w-full shadow-md"
             />
           </div>
@@ -29,16 +33,25 @@ export default async function AboutSection() {
         {/* Story Content Column */}
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-3">
-            <span className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-burgundy">
-              About CREATION&apos;S
-            </span>
+            <div className="flex items-center gap-2.5">
+              <BrandLogo
+                media={logoMedia}
+                height={40}
+                width={150}
+                imageClassName="h-8 sm:h-9 w-auto object-contain"
+                fallbackClassName="text-burgundy text-lg font-bold"
+              />
+              <span className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-burgundy">
+                · Besant Nagar Studio
+              </span>
+            </div>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-espresso leading-[1.12]">
               A local destination for considered home furnishing.
             </h2>
           </div>
 
           <p className="font-sans text-base sm:text-lg text-taupe leading-relaxed">
-            Based in Besant Nagar, CREATION&apos;S is a dedicated home furnishing studio focused on helping homeowners transform their spaces with tailored curtains, precision window blinds, custom upholstery, and luxury bedroom linens.
+            Based in Besant Nagar, our dedicated home furnishing studio is focused on helping homeowners transform their spaces with tailored curtains, precision window blinds, custom upholstery, and luxury bedroom linens.
           </p>
 
           <p className="font-sans text-sm sm:text-base text-taupe leading-relaxed">

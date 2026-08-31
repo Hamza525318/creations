@@ -90,7 +90,7 @@ export default async function RootLayout({
       <body className="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased selection:bg-burgundy selection:text-ivory">
         <Header logoMedia={logoMedia} />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>
-        <Footer />
+        <Footer logoMedia={logoMedia} />
         <MobileContactBar />
       </body>
     </html>

@@ -1,7 +1,9 @@
 import React from "react";
 import Container from "./container";
+import BrandLogo from "@/components/common/brand-logo";
 import { siteConfig } from "@/config/site";
 import { mainNav } from "@/config/navigation";
+import { WebsiteMedia } from "@/lib/media/types";
 import { MapPin, Phone, MessageCircle, Smartphone } from "lucide-react";
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -22,18 +24,28 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-export default function Footer() {
+interface FooterProps {
+  logoMedia?: WebsiteMedia | null;
+}
+
+export default function Footer({ logoMedia }: FooterProps) {
   return (
     <footer className="bg-olive text-ivory border-t border-olive/80 pt-16 pb-24 md:pb-12">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-ivory/15">
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="space-y-1">
-              <span className="font-display text-3xl font-semibold tracking-wider text-ivory block">
-                {siteConfig.name}
-              </span>
-              <span className="font-sans text-xs uppercase tracking-[0.2em] text-champagne block font-medium">
+            <div className="space-y-2">
+              <div className="bg-card/90 px-3.5 py-2 rounded-xl inline-flex items-center shadow-xs border border-ivory/20">
+                <BrandLogo
+                  media={logoMedia}
+                  height={44}
+                  width={180}
+                  imageClassName="h-9 sm:h-10 w-auto object-contain"
+                  fallbackClassName="text-espresso text-2xl font-bold"
+                />
+              </div>
+              <span className="font-sans text-xs uppercase tracking-[0.2em] text-champagne block font-medium pt-1">
                 {siteConfig.tagline}
               </span>
             </div>
@@ -122,8 +134,8 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-sans text-xs text-sand/60">
-          <p>© {new Date().getFullYear()} CREATION&apos;S. All rights reserved. Besant Nagar, Chennai.</p>
-          <p className="text-sand/50">Changing Home Styles</p>
+          <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved. Besant Nagar, Chennai.</p>
+          <p className="text-sand/50">{siteConfig.tagline}</p>
         </div>
       </Container>
     </footer>

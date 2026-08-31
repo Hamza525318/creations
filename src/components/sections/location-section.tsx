@@ -2,13 +2,17 @@ import React from "react";
 import Section from "@/components/layout/section";
 import SectionHeading from "@/components/common/section-heading";
 import WebsiteImage from "@/components/common/website-image";
+import BrandLogo from "@/components/common/brand-logo";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { getMediaForSlot } from "@/lib/media/queries";
 import { MapPin, Phone, Clock, Navigation, Smartphone } from "lucide-react";
 
 export default async function LocationSection() {
-  const showroomMedia = await getMediaForSlot("showroom.main");
+  const [showroomMedia, logoMedia] = await Promise.all([
+    getMediaForSlot("showroom.main"),
+    getMediaForSlot("branding.logo-primary"),
+  ]);
 
   return (
     <Section id="location" variant="white">
@@ -23,10 +27,15 @@ export default async function LocationSection() {
         {/* Info Column: Prominently displayed across all screens */}
         <div className="w-full lg:col-span-5 flex flex-col justify-between bg-card p-6 sm:p-8 rounded-2xl border border-border/80 space-y-8">
           <div className="space-y-6">
-            <div className="space-y-1">
-              <h3 className="font-display text-3xl font-semibold text-burgundy">
-                {siteConfig.name}
-              </h3>
+            {/* Showroom Brand Logo Header */}
+            <div className="space-y-2">
+              <BrandLogo
+                media={logoMedia}
+                height={52}
+                width={200}
+                imageClassName="h-11 sm:h-12 w-auto object-contain"
+                fallbackClassName="text-burgundy text-3xl font-semibold"
+              />
               <p className="font-sans text-xs uppercase tracking-widest text-taupe font-semibold">
                 {siteConfig.tagline}
               </p>
