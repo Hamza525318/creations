@@ -44,9 +44,9 @@ export default function TestimonialsSection() {
             <div className="pt-4 border-t border-border/60 space-y-2">
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h3 className="font-sans text-sm font-semibold text-espresso">
+                  <p className="font-sans text-sm font-semibold text-espresso">
                     {item.author}
-                  </h3>
+                  </p>
                   {item.badge && (
                     <p className="font-sans text-[11px] text-taupe/80">
                       {item.badge}

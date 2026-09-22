@@ -31,9 +31,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = createMetadata({
-  title: "How to Measure Curtains & Blinds | CREATION'S Chennai",
+  title: "How to Measure Curtains & Blinds",
   description:
-    "Learn how to measure your windows for custom curtains, drapery, and blinds before visiting or contacting CREATION'S in Besant Nagar, Chennai.",
+    "Step-by-step guide to measuring window width & drop for custom curtains and blinds before ordering from CREATION'S in Besant Nagar.",
   path: "/measurement-guide",
 });
 
@@ -320,7 +320,7 @@ export default function MeasurementGuidePage() {
               <div className="flex items-start gap-3 p-4 rounded-2xl bg-sand/30 border border-border/60">
                 <Ruler className="h-5 w-5 text-burgundy shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-espresso">1. Width & Height</h4>
+                  <h3 className="font-sans text-xs font-semibold text-espresso">1. Width & Height</h3>
                   <p className="font-sans text-[11px] text-taupe">Rough window or track size</p>
                 </div>
               </div>
@@ -328,7 +328,7 @@ export default function MeasurementGuidePage() {
               <div className="flex items-start gap-3 p-4 rounded-2xl bg-sand/30 border border-border/60">
                 <Camera className="h-5 w-5 text-burgundy shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-espresso">2. Full Window Photo</h4>
+                  <h3 className="font-sans text-xs font-semibold text-espresso">2. Full Window Photo</h3>
                   <p className="font-sans text-[11px] text-taupe">Shows wall & ceiling space</p>
                 </div>
               </div>
@@ -336,7 +336,7 @@ export default function MeasurementGuidePage() {
               <div className="flex items-start gap-3 p-4 rounded-2xl bg-sand/30 border border-border/60">
                 <Sparkles className="h-5 w-5 text-burgundy shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-espresso">3. Style Preference</h4>
+                  <h3 className="font-sans text-xs font-semibold text-espresso">3. Style Preference</h3>
                   <p className="font-sans text-[11px] text-taupe">Curtains, sheers, or blinds</p>
                 </div>
               </div>
@@ -344,7 +344,7 @@ export default function MeasurementGuidePage() {
               <div className="flex items-start gap-3 p-4 rounded-2xl bg-sand/30 border border-border/60">
                 <MessageCircle className="h-5 w-5 text-burgundy shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-espresso">4. Your Area in Chennai</h4>
+                  <h3 className="font-sans text-xs font-semibold text-espresso">4. Your Area in Chennai</h3>
                   <p className="font-sans text-[11px] text-taupe">Besant Nagar, Adyar, ECR, etc.</p>
                 </div>
               </div>

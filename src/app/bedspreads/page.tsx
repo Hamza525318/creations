@@ -4,9 +4,9 @@ import CategoryPage from "@/components/collections/category-page";
 import { createMetadata } from "@/config/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Bedspreads in Besant Nagar, Chennai | CREATION'S",
+  title: "Bedspreads & Quilts in Besant Nagar",
   description:
-    "Explore luxury bedspreads, tailored quilts, and coordinated bedroom textiles designed for rest and character at CREATION'S in Besant Nagar, Chennai.",
+    "Luxury bedspreads, tailored quilts and bedroom linens in Besant Nagar, Chennai. Crafted for coastal comfort and style at CREATION'S.",
   path: "/bedspreads",
 });
 

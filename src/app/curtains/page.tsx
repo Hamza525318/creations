@@ -4,9 +4,9 @@ import CategoryPage from "@/components/collections/category-page";
 import { createMetadata } from "@/config/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Curtains in Besant Nagar, Chennai | CREATION'S",
+  title: "Curtains in Besant Nagar, Chennai",
   description:
-    "Explore bespoke curtains in Besant Nagar, Chennai. From sheer linen drapes to lined blackout curtains, tailor your living room and bedroom window treatments with CREATION'S.",
+    "Custom drapes, sheer fabrics & blackout curtains in Besant Nagar, Chennai. Tailored stitching and fitting services by CREATION'S.",
   path: "/curtains",
 });
 

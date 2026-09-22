@@ -4,9 +4,9 @@ import CategoryPage from "@/components/collections/category-page";
 import { createMetadata } from "@/config/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Upholstery in Besant Nagar, Chennai | CREATION'S",
+  title: "Upholstery in Besant Nagar, Chennai",
   description:
-    "Give familiar furniture a fresh perspective with durable, tactile upholstery fabrics and custom sofa re-covering at CREATION'S in Besant Nagar, Chennai.",
+    "Custom upholstery fabrics & sofa re-covering in Besant Nagar, Chennai. Premium textures and tailored furniture revival at CREATION'S.",
   path: "/upholstery",
 });
 

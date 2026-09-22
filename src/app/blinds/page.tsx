@@ -4,9 +4,9 @@ import CategoryPage from "@/components/collections/category-page";
 import { createMetadata } from "@/config/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Blinds in Besant Nagar, Chennai | CREATION'S",
+  title: "Window Blinds in Besant Nagar, Chennai",
   description:
-    "Discover precision window blinds in Besant Nagar, Chennai. Explore tailored Roman blinds, roller shades, and wooden blinds designed for light control and privacy.",
+    "Custom Roman blinds, roller shades & wooden Venetian blinds in Besant Nagar, Chennai. Smooth light control & fitting by CREATION'S.",
   path: "/blinds",
 });
 

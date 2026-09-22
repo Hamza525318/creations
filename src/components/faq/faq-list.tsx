@@ -32,26 +32,28 @@ export default function FAQList({ items }: FAQListProps) {
                 : "bg-card/70 border-border/80 hover:border-border hover:bg-card"
             }`}
           >
-            <button
-              id={triggerId}
-              type="button"
-              aria-expanded={isOpen}
-              aria-controls={contentId}
-              onClick={() => toggle(item.id)}
-              className="w-full py-4 sm:py-5 px-5 sm:px-6 flex items-center justify-between text-left gap-4 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-burgundy rounded-2xl cursor-pointer"
-            >
-              <span className="font-display text-lg sm:text-xl font-medium text-espresso pr-2">
-                {item.question}
-              </span>
-              <span
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sand/60 text-burgundy transition-transform duration-300 ${
-                  isOpen ? "rotate-180 bg-sand text-burgundy" : ""
-                }`}
-                aria-hidden="true"
+            <h3 className="m-0 p-0 text-base font-normal">
+              <button
+                id={triggerId}
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={contentId}
+                onClick={() => toggle(item.id)}
+                className="w-full py-4 sm:py-5 px-5 sm:px-6 flex items-center justify-between text-left gap-4 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-burgundy rounded-2xl cursor-pointer"
               >
-                <ChevronDown className="h-4 w-4" />
-              </span>
-            </button>
+                <span className="font-display text-lg sm:text-xl font-medium text-espresso pr-2">
+                  {item.question}
+                </span>
+                <span
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sand/60 text-burgundy transition-transform duration-300 ${
+                    isOpen ? "rotate-180 bg-sand text-burgundy" : ""
+                  }`}
+                  aria-hidden="true"
+                >
+                  <ChevronDown className="h-4 w-4" />
+                </span>
+              </button>
+            </h3>
 
             {isOpen && (
               <div

@@ -24,11 +24,11 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Curtains & Blinds Store in Besant Nagar, Chennai | CREATION'S",
+    default: "Curtains & Blinds in Besant Nagar | CREATION'S",
     template: "%s | CREATION'S",
   },
   description:
-    "Explore curtains, blinds, ready made curtains, upholstery and bedspreads at CREATION'S in Besant Nagar, Chennai. Visit our showroom or contact us for home furnishing requirements.",
+    "Curtains, window blinds, upholstery & bedspreads in Besant Nagar, Chennai. Custom drapery, expert fitting & showroom visits at CREATION'S.",
   alternates: {
     canonical: "/",
   },
@@ -41,23 +41,23 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_IN",
     url: siteConfig.url,
-    title: "Curtains & Blinds Store in Besant Nagar, Chennai | CREATION'S",
+    title: "Curtains & Blinds in Besant Nagar | CREATION'S",
     description:
-      "Explore curtains, blinds, ready made curtains, upholstery and bedspreads at CREATION'S in Besant Nagar, Chennai. Visit our showroom or contact us for home furnishing requirements.",
+      "Curtains, window blinds, upholstery & bedspreads in Besant Nagar, Chennai. Custom drapery, expert fitting & showroom visits at CREATION'S.",
     images: [
       {
         url: `${siteConfig.url}/og-default.jpg`,
         width: 1200,
         height: 630,
-        alt: "CREATION'S - Curtains & Blinds Store in Besant Nagar, Chennai",
+        alt: "CREATION'S - Curtains & Blinds in Besant Nagar, Chennai",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Curtains & Blinds Store in Besant Nagar, Chennai | CREATION'S",
+    title: "Curtains & Blinds in Besant Nagar | CREATION'S",
     description:
-      "Explore curtains, blinds, ready made curtains, upholstery and bedspreads at CREATION'S in Besant Nagar, Chennai. Visit our showroom or contact us for home furnishing requirements.",
+      "Curtains, window blinds, upholstery & bedspreads in Besant Nagar, Chennai. Custom drapery, expert fitting & showroom visits at CREATION'S.",
   },
   robots: {
     index: true,

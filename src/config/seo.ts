@@ -22,12 +22,15 @@ export function createMetadata({
   noIndex = false,
 }: PageMetadataProps): Metadata {
   const canonicalUrl = path ? `${siteConfig.url}${path}` : siteConfig.url;
+  const fullTitle = title.includes(siteConfig.name)
+    ? title
+    : `${title} | ${siteConfig.name}`;
 
   const defaultImage = {
     url: `${siteConfig.url}/og-default.jpg`,
     width: 1200,
     height: 630,
-    alt: `${siteConfig.name} - Curtains & Blinds Store in Besant Nagar, Chennai`,
+    alt: `${siteConfig.name} - Curtains & Blinds in Besant Nagar, Chennai`,
   };
 
   const ogImage = image
@@ -35,7 +38,7 @@ export function createMetadata({
         url: image.url,
         width: image.width || 1200,
         height: image.height || 630,
-        alt: image.alt || title,
+        alt: image.alt || fullTitle,
       }
     : defaultImage;
 
@@ -50,13 +53,13 @@ export function createMetadata({
       siteName: siteConfig.name,
       locale: "en_IN",
       url: canonicalUrl,
-      title,
+      title: fullTitle,
       description,
       images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: [ogImage.url],
     },

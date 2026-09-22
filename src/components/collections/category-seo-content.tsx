@@ -212,6 +212,25 @@ export default function CategorySEOContent({ category }: CategorySEOContentProps
                 </p>
               </div>
             </div>
+
+            {/* Helpful Cross-Links */}
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold">
+              <Link
+                href="/curtains"
+                className="inline-flex items-center gap-1.5 text-burgundy hover:underline py-1.5 px-3 rounded-lg bg-sand/60 hover:bg-sand"
+              >
+                <span>Coordinate with Custom Curtains</span>
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+
+              <a
+                href="/#location"
+                className="inline-flex items-center gap-1 text-espresso hover:text-burgundy transition-colors py-1.5 px-3 rounded-lg bg-sand/40 hover:bg-sand"
+              >
+                <span>Showroom Location & Fabric Swatches</span>
+                <ArrowRight className="h-3 w-3" />
+              </a>
+            </div>
           </div>
         </Container>
       </section>
@@ -250,6 +269,25 @@ export default function CategorySEOContent({ category }: CategorySEOContentProps
                   Visit our Besant Nagar showroom near Rajaji Bhavan to view fabric textures and custom sizing options.
                 </p>
               </div>
+            </div>
+
+            {/* Helpful Cross-Links */}
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold">
+              <Link
+                href="/curtains"
+                className="inline-flex items-center gap-1.5 text-burgundy hover:underline py-1.5 px-3 rounded-lg bg-sand/60 hover:bg-sand"
+              >
+                <span>Matching Bedroom Curtains</span>
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+
+              <Link
+                href="/blinds"
+                className="inline-flex items-center gap-1 text-espresso hover:text-burgundy transition-colors py-1.5 px-3 rounded-lg bg-sand/40 hover:bg-sand"
+              >
+                <span>Bedroom Blackout Blinds</span>
+                <ArrowRight className="h-3 w-3" />
+              </Link>
             </div>
           </div>
         </Container>

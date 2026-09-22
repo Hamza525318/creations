@@ -45,7 +45,7 @@ export default async function LocationSection() {
               <div className="flex items-start space-x-3 text-espresso">
                 <MapPin className="h-5 w-5 text-burgundy shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-sans text-sm font-semibold">Showroom Address</h4>
+                  <h3 className="font-sans text-sm font-semibold">Showroom Address</h3>
                   <p className="font-sans text-sm text-taupe leading-relaxed">
                     {siteConfig.address.fullAddress}
                   </p>
@@ -58,7 +58,7 @@ export default async function LocationSection() {
               <div className="flex items-start space-x-3 text-espresso">
                 <Smartphone className="h-5 w-5 text-burgundy shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-sans text-sm font-semibold">Mobile & WhatsApp</h4>
+                  <h3 className="font-sans text-sm font-semibold">Mobile & WhatsApp</h3>
                   <a
                     href={`tel:${siteConfig.phoneRaw}`}
                     className="font-sans text-sm text-taupe hover:text-burgundy transition-colors block"
@@ -71,7 +71,7 @@ export default async function LocationSection() {
               <div className="flex items-start space-x-3 text-espresso">
                 <Phone className="h-5 w-5 text-burgundy shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-sans text-sm font-semibold">Landline</h4>
+                  <h3 className="font-sans text-sm font-semibold">Landline</h3>
                   <a
                     href={`tel:${siteConfig.landlineRaw}`}
                     className="font-sans text-sm text-taupe hover:text-burgundy transition-colors block"
@@ -84,7 +84,7 @@ export default async function LocationSection() {
               <div className="flex items-start space-x-3 text-espresso">
                 <Clock className="h-5 w-5 text-burgundy shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-sans text-sm font-semibold">Showroom Hours</h4>
+                  <h3 className="font-sans text-sm font-semibold">Showroom Hours</h3>
                   <p className="font-sans text-sm text-taupe">
                     {siteConfig.hours}
                   </p>
