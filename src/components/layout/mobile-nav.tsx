@@ -91,7 +91,7 @@ export default function MobileNav({ logoMedia }: MobileNavProps) {
               <MapPin className="h-3.5 w-3.5 text-burgundy shrink-0" />
               {siteConfig.address.fullAddress}
             </p>
-            <p className="pl-5 text-taupe/80">{siteConfig.hours}</p>
+            <p className="pl-5 text-taupe">{siteConfig.hours}</p>
           </div>
         </div>
       </SheetContent>

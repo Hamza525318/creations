@@ -48,14 +48,14 @@ export default function TestimonialsSection() {
                     {item.author}
                   </p>
                   {item.badge && (
-                    <p className="font-sans text-[11px] text-taupe/80">
+                    <p className="font-sans text-[11px] text-taupe font-medium">
                       {item.badge}
                     </p>
                   )}
                 </div>
 
                 {item.timeAgo && (
-                  <span className="font-sans text-[10px] text-taupe/70 shrink-0">
+                  <span className="font-sans text-[10px] text-taupe font-medium shrink-0">
                     {item.timeAgo}
                   </span>
                 )}

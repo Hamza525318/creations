@@ -80,7 +80,7 @@ export default function CategoryHero({ config, coverMedia }: CategoryHeroProps) 
 
             <div className="pt-2 flex items-center gap-3">
               <div className="h-[1px] w-10 bg-gold/50" />
-              <span className="font-display text-xs italic text-taupe/80">
+              <span className="font-display text-xs italic text-charcoal">
                 {config.heroSubtitle}
               </span>
             </div>

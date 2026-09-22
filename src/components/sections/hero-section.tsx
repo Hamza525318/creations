@@ -69,7 +69,7 @@ export default async function HeroSection() {
             {/* Subtle Gold Accent Divider / Service Area Context */}
             <div className="pt-2 flex items-center gap-3 w-full">
               <div className="h-[1px] w-12 bg-gold/50" />
-              <span className="font-display text-xs italic text-taupe/80">
+              <span className="font-display text-xs italic text-charcoal">
                 Serving Besant Nagar, Adyar, ECR, and South Chennai homes
               </span>
             </div>

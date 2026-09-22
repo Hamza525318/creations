@@ -18,7 +18,7 @@
     --secondary-foreground: #29241f;
 
     --muted: #eee6d8;
-    --muted-foreground: #746b62;
+    --muted-foreground: #544d45;
 
     --accent: #7b8264;
     --accent-foreground: #fffdf9;
@@ -37,7 +37,7 @@
     --brand-sand: #eee6d8;
     --brand-espresso: #29241f;
     --brand-charcoal: #403a34;
-    --brand-taupe: #746b62;
+    --brand-taupe: #544d45;
     --brand-border-strong: #cfc3b3;
 
     --radius: 0.75rem;
@@ -83,7 +83,7 @@
   --color-sand: #eee6d8;
   --color-espresso: #29241f;
   --color-charcoal: #403a34;
-  --color-taupe: #746b62;
+  --color-taupe: #544d45;
   --color-border-strong: #cfc3b3;
 
   --radius-lg: var(--radius);

@@ -49,7 +49,7 @@ export default async function LocationSection() {
                   <p className="font-sans text-sm text-taupe leading-relaxed">
                     {siteConfig.address.fullAddress}
                   </p>
-                  <p className="font-sans text-xs text-taupe/80 pt-1">
+                  <p className="font-sans text-xs text-taupe pt-1">
                     Conveniently accessible from Besant Nagar, Adyar, ECR & Thiruvanmiyur.
                   </p>
                 </div>

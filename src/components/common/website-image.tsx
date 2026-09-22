@@ -12,6 +12,7 @@ interface WebsiteImageProps {
   fallbackLabel?: string;
   fallbackCategory?: string;
   priority?: boolean;
+  fetchPriority?: "high" | "low" | "auto";
   sizes?: string;
 }
 
@@ -23,6 +24,7 @@ export default function WebsiteImage({
   fallbackLabel = "Photography Placeholder",
   fallbackCategory,
   priority = false,
+  fetchPriority,
   sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
 }: WebsiteImageProps) {
   if (!media || !media.secureUrl) {
@@ -47,6 +49,8 @@ export default function WebsiteImage({
     auto: "",
   };
 
+  const computedFetchPriority = fetchPriority || (priority ? "high" : undefined);
+
   return (
     <div
       className={cn(
@@ -61,6 +65,8 @@ export default function WebsiteImage({
         fill
         sizes={sizes}
         priority={priority}
+        loading={priority ? "eager" : undefined}
+        fetchPriority={computedFetchPriority}
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
       />
     </div>
