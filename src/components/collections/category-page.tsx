@@ -9,6 +9,7 @@ import CategorySEOContent from "./category-seo-content";
 import CategoryContactCTA from "./category-contact-cta";
 import RelatedCategories from "./related-categories";
 import BreadcrumbSchema from "@/components/seo/breadcrumb-schema";
+import ProductCategorySchema from "@/components/seo/product-category-schema";
 import { WebsiteMedia } from "@/lib/media/types";
 
 interface CategoryPageProps {
@@ -35,6 +36,7 @@ export default async function CategoryPage({ category }: CategoryPageProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <BreadcrumbSchema items={[{ name: config.label, url: config.href }]} />
+      <ProductCategorySchema config={config} coverMedia={coverMedia} items={items} />
       <CategoryHero config={config} coverMedia={coverMedia} />
       <CatalogGrid category={category} items={items} />
       <CategorySEOContent category={category} />

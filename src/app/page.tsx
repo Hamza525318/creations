@@ -12,6 +12,7 @@ import ContactCTASection from "@/components/sections/contact-cta-section";
 import LocationSection from "@/components/sections/location-section";
 import LocalBusinessSchema from "@/components/seo/local-business-schema";
 import WebsiteSchema from "@/components/seo/website-schema";
+import FAQSchema from "@/components/seo/faq-schema";
 import { getMediaForSlot } from "@/lib/media/queries";
 
 export default async function HomePage() {
@@ -24,6 +25,7 @@ export default async function HomePage() {
     <>
       <LocalBusinessSchema logoMedia={logoMedia} coverMedia={heroMedia} />
       <WebsiteSchema />
+      <FAQSchema />
       <HeroSection />
       <CategorySection />
       <BenefitsSection />
